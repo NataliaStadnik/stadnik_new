@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "./contexts/ThemeContext";
+// import { ThemeProvider } from "./contexts/ThemeContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ERROR_ROUTE_CONFIG, getRouteConfig } from "./services/routes/routes";
 import Loader from "./components/Loader";
@@ -18,7 +18,7 @@ export function App() {
       <BrowserRouter basename="/stadnik_new">
         <Suspense fallback={<Loader />}>
           <I18nextProvider i18n={i18n}>
-            <ThemeProvider>
+            {/* <ThemeProvider> */}
               <Routes>
                 <Route element={<Layout />}>
                   {getRouteConfig().map((route, i) => (
@@ -33,7 +33,7 @@ export function App() {
                   <Route key={i} path={route.path} element={route.element} />
                 ))}
               </Routes>
-            </ThemeProvider>
+            {/* </ThemeProvider> */}
           </I18nextProvider>
         </Suspense>
       </BrowserRouter>
