@@ -15,7 +15,7 @@ import i18n from "./services/i18n/i18n";
 export function App() {
   return (
     <ErrorBoundary>
-      <BrowserRouter>
+      <BrowserRouter basename="/stadnik_new">
         <Suspense fallback={<Loader />}>
           <I18nextProvider i18n={i18n}>
             <ThemeProvider>
