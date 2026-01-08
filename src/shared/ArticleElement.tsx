@@ -20,7 +20,7 @@ export type Category =
 export interface Article {
   title: string;
   excerpt: string;
-  category: Category;
+  category: string;
   readTime: string;
   color: string;
   slug: string;
