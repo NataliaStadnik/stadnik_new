@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Anchor, Scissors, Activity, Layers, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import toothExtraction from "../assets/images/tooth_extraction.jpg";
-import sinus from "../assets/images/sinus.png";
+import sinus from "../assets/images/sinus.jpg";
 import implant from "../assets/images/implant-placement.png";
 import bonePlastic from "../assets/images/bone_surgery.png";
-import tissue from "../assets/images/tissue.png";
+import tissue from "../assets/images/tissue.jpg";
 
 const ProceduresPage = () => {
   const { t } = useTranslation();
@@ -87,7 +87,7 @@ const ProceduresPage = () => {
       ],
       recovery: t("procedures.tissue_recovery"),
       color: "bg-zen-sage/10",
-      img: tissue
+      img: tissue,
     },
     {
       id: "bone",
@@ -106,7 +106,7 @@ const ProceduresPage = () => {
       ],
       recovery: t("procedures.bone_recovery"),
       color: "bg-zen-soft/20",
-      img: bonePlastic
+      img: bonePlastic,
     },
   ];
   return (

@@ -10,7 +10,7 @@ const Statistics = () => {
       label: t("statistics.experience"),
     },
     {
-      value: "5k+",
+      value: "7k+",
       label: t("statistics.implants"),
     },
     {

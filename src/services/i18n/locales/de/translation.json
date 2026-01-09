@@ -159,7 +159,7 @@
     "question_1": "Welche Operationen führe ich durch?",
     "answer_1": "Ich führe Zahnextraktionen jeglicher Komplexität, Implantationen, plastische Chirurgie (Weich- und Hartgewebe) sowie weitere chirurgische Eingriffe zur Wiederherstellung der Gesundheit und Ästhetik Ihres Lächelns durch.",
     "question_2": "Wie lange dauert eine Zahnimplantation?",
-    "answer_2": "Das Einsetzen eines Implantats dauert etwa 30–60 Minuten. Die Heilungsphase ist individuell unterschiedlich und dauert in der Regel mehrere Monate.",
+    "answer_2": "Das Einsetzen eines Implantats dauert etwa 40–60 Minuten. Die Heilungsphase ist individuell unterschiedlich und dauert in der Regel mehrere Monate.",
     "question_3": "Was soll ich tun, wenn nach der Operation Schwellungen oder Schmerzen auftreten?",
     "answer_3": "Leichte Schwellungen und mäßige Schmerzen sind normale Reaktionen. Ich empfehle, die betroffene Stelle zu kühlen, die verschriebenen Medikamente einzunehmen und den Behandlungsplan einzuhalten. Sollten sich die Symptome verschlimmern, konsultieren Sie bitte einen Arzt.",
     "question_4": "Ist die Weisheitszahnentfernung schmerzhaft?",
@@ -218,6 +218,8 @@
     "educ_4": "Zahnarzt-Chirurg in der 14. städtischen Zahnklinik in Minsk",
     "educ_5": "Zahnarzt im VINIR Medical Center",
     "educ_6": "Mitglied von MEET (MIS Expert Experience Team)",
+    "educ_7": "Straumann-Dozent",
+    "educ_8": "MegaGen-Dozent",
 
     "courses_title": "Auffrischungskurse",
     "course_title_1": "Grundlagen der Zahnimplantation",

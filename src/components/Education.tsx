@@ -7,11 +7,7 @@ const Education = () => {
   const educationConfig = [
     {
       title: t("about_page.educ_1"),
-      year: "2011 - 2013",
-    },
-    {
-      title: t("about_page.educ_2"),
-      year: "2013 - 2016",
+      year: "2011 - 2016",
     },
     {
       title: t("about_page.educ_3"),
@@ -23,11 +19,19 @@ const Education = () => {
     },
     {
       title: t("about_page.educ_5"),
-      year: `${t("about_page.start")} 2022`,
+      year: `${t("about_page.start")} 2021`,
     },
     {
       title: t("about_page.educ_6"),
       year: `${t("about_page.start")} 2023`,
+    },
+    {
+      title: t("about_page.educ_7"),
+      year: `${t("about_page.start")} 2025`,
+    },
+    {
+      title: t("about_page.educ_8"),
+      year: `${t("about_page.start")} 2025`,
     },
   ];
 
