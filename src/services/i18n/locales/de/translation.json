@@ -178,7 +178,11 @@
     "more_read": "Lesen Sie weitere Artikel",
     "journal": "Zeitschrift",
     "min_read": "Minuten Lesezeit",
-    "read": "Artikel lesen"
+    "read": "Artikel lesen",
+    "back_to_articles": "Zurück zu Artikeln",
+    "all": "Alle Kategorien",
+    "filter": "Filter",
+    "notFound": "Nicht gefunden"
   },
   "hero": {
     "badge": "Vertrauen und Komfort",
@@ -235,13 +239,7 @@
     "course_hours_3": "80 Stunden Studium",
     "course_hours_4": "80 Stunden Studium"
   },
-
-  "contact": {
-    "title": "Beginnen Sie Ihre Reise",
-    "subtitle": "Wir laden Sie ein, den Unterschied der achtsamen Zahnmedizin zu erleben.",
-    "name": "Name",
-    "email": "Email",
-    "message": "Nachricht",
-    "submit": "Termin anfragen"
+  "common": {
+    "back_home": "Startseite"
   }
 }

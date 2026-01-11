@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Moon, Globe } from "lucide-react";
+import { Menu, X, Moon, Globe, Sun } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-// import { useTheme } from "../contexts/useTheme";
 import { useTranslation } from "react-i18next";
 import { PATHS } from "../services/routes/path";
 import { Language, LANGUAGES } from "../services/i18n/types";
 import Logo from "../shared/Logo";
+import { useTheme } from "../services/theme/useTheme";
+
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +17,7 @@ const Header = () => {
   // const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
 
   const location = useLocation();
-  // const { theme, toggleTheme } = useTheme();
+  const { dark, toggle } = useTheme();
   const { t, i18n } = useTranslation();
 
   const languageFromLS = localStorage.getItem("language") || Language.EN;
@@ -186,12 +188,11 @@ const Header = () => {
             </div> */}
 
             <button
-              // onClick={toggleTheme}
+              onClick={toggle}
               className="p-2 rounded-full hover:bg-zen-sky/50 dark:hover:bg-zen-dark-bg/50 text-zen-text dark:text-zen-dark-text transition-colors"
               aria-label="Toggle theme"
             >
-              <Moon size={20} />
-              {/* {theme === "light" ? <Moon size={18} /> : <Sun size={18} />} */}
+              {dark ? <Sun size={20}/>  : <Moon size={20} /> }
             </button>
 
             <div className="relative">
@@ -245,11 +246,10 @@ const Header = () => {
 
           <div className="flex items-center space-x-4 lg:hidden">
             <button
-              // onClick={toggleTheme}
+              onClick={toggle}
               className="p-2 rounded-full hover:bg-zen-sky/50 dark:hover:bg-zen-dark-bg/50 text-zen-text dark:text-zen-dark-text transition-colors cursor-pointer"
             >
-              <Moon size={20} />
-              {/* {theme === "light" ? <Moon size={20} /> : <Sun size={20} />} */}
+              {dark ? <Sun size={20}/>  : <Moon size={20} /> }
             </button>
 
             <button

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Stethoscope, User, Users } from "lucide-react";
+import megaLection from "../assets/images/mega_lection.jpg";
+import meSurgery from "../assets/images/me_surgery.jpg";
+import straumanLecture from "../assets/images/staruman_lecture.jpg";
 
 const PhotoMe = () => {
   return (
@@ -17,15 +19,13 @@ const PhotoMe = () => {
           viewport={{
             once: true,
           }}
-          className="aspect-[3/4] bg-zen-sage/20 dark:bg-zen-dark-surface rounded-2xl flex flex-col items-center justify-center text-zen-sage overflow-hidden relative group"
+          className="rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
         >
-          <User
-            size={64}
-            strokeWidth={1}
-            className="mb-4 group-hover:scale-110 transition-transform duration-500"
+          <img
+            src={megaLection}
+            alt="Me on lection"
+            className="object-cover h-full"
           />
-          <span className="uppercase tracking-widest text-sm">Portrait</span>
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
         </motion.div>
 
         <motion.div
@@ -43,17 +43,13 @@ const PhotoMe = () => {
           transition={{
             delay: 0.1,
           }}
-          className="aspect-[3/4] bg-zen-soft/20 dark:bg-zen-dark-surface rounded-2xl flex flex-col items-center justify-center text-zen-soft overflow-hidden relative group"
+          className="rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
         >
-          <Users
-            size={64}
-            strokeWidth={1}
-            className="mb-4 group-hover:scale-110 transition-transform duration-500"
+          <img
+            src={meSurgery}
+            alt="Me as surgery"
+            className="object-cover h-full"
           />
-          <span className="uppercase tracking-widest text-sm">
-            Consultation
-          </span>
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
         </motion.div>
 
         <motion.div
@@ -71,17 +67,13 @@ const PhotoMe = () => {
           transition={{
             delay: 0.2,
           }}
-          className="aspect-[3/4] bg-zen-sky/30 dark:bg-zen-dark-surface rounded-2xl flex flex-col items-center justify-center text-zen-text/50 dark:text-zen-dark-text/50 overflow-hidden relative group"
+           className="rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
         >
-          <Stethoscope
-            size={64}
-            strokeWidth={1}
-            className="mb-4 group-hover:scale-110 transition-transform duration-500"
+          <img
+            src={straumanLecture}
+            alt="Me as lecture"
+            className="object-cover h-full"
           />
-          <span className="uppercase tracking-widest text-sm">
-            Clinical Care
-          </span>
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
         </motion.div>
       </div>
     </section>

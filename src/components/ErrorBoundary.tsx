@@ -53,7 +53,7 @@ class ErrorBoundary extends Component<Props, State> {
         <div className="flex flex-col items-center justify-center my-auto w-full min-h-screen">
           <img
             src={logo}
-            alt="Dr.Stadnik"
+            alt="tooth"
             data-testid="logo"
             className="w-[137px] mb-4"
           />

@@ -1,149 +1,51 @@
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Filter, Search, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import ArticleElement from "../shared/ArticleElement";
+import { allArticles, Category } from "../constants/allArticles";
+import { useEffect, useState, type SyntheticEvent } from "react";
+import NotFoundSearch from "../assets/svg/NotFoundSearch";
 
 const ArticlesPage = () => {
   const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [debouncedSearch, setDebouncedSearch] = useState<string>("");
 
-  const allArticles = [
-    {
-      title: "Имплантация зубов: как выбрать оптимальный вариант?",
-      excerpt:
-        "Современная стоматология предлагает множество вариантов имплантации зубов, но как выбрать тот, который лучше всего подойдет именно вам?",
-      category: "Имплантология",
-      readTime: `6 ${t("articles.min_read")}`,
-      color: "bg-zen-sage/20",
-      slug: "implantaciya-zubov-optimalnyj-variant",
-    },
-    {
-      title: "Костная пластика перед имплантацией: зачем она нужна?",
-      excerpt:
-        "Успешная установка зубного импланта во многом зависит от состояния костной ткани челюсти. Когда ее недостаточно, костная пластика становится важным этапом подготовки.",
-      category: "Хирургия",
-      readTime: `7 ${t("articles.min_read")}`,
-      color: "bg-zen-soft/20",
-      slug: "kostnaya-plastika-pered-implantaciej",
-    },
-    {
-      title: "Как ухаживать за зубами после хирургического вмешательства?",
-      excerpt:
-        "После стоматологической операции важно правильно ухаживать за ротовой полостью. В этой статье вы найдете практические рекомендации, которые помогут вам пройти этот этап с комфортом.",
-      category: "Гигиена",
-      readTime: `5 ${t("articles.min_read")}`,
-      color: "bg-zen-sky",
-      slug: "uhod-za-zubami-posle-operacii",
-    },
-    {
-      title: "Периимплантит: как избежать воспаления вокруг импланта?",
-      excerpt:
-        "Периимплантит — одно из осложнений после имплантации зубов. Подробно рассмотрим причины его появления и способы профилактики.",
-      category: "Хирургия",
-      readTime: `6 ${t("articles.min_read")}`,
-      color: "bg-zen-sky",
-      slug: "periimplantit-kak-izbezhat-vospaleniya",
-    },
-    {
-      title: "Синус-лифтинг: когда он необходим перед имплантацией?",
-      excerpt:
-        "Синус-лифтинг — важный этап подготовки к имплантации при недостатке костной ткани верхней челюсти. В статье подробно рассказываем о показаниях, методах проведения и восстановлении после процедуры.",
-      category: "Хирургия",
-      readTime: `5 ${t("articles.min_read")}`,
-      color: "bg-zen-sky",
-      slug: "sinus-lifting-pered-implantaciej",
-    },
-    {
-      title: "Все о временных коронках: зачем они нужны после имплантации?",
-      excerpt:
-        "Временные коронки играют важную роль в процессе восстановления после установки импланта. Узнайте, какие функции они выполняют и когда стоит их заменять.",
-      category: "Хирургия",
-      readTime: `5 ${t("articles.min_read")}`,
-      color: "bg-zen-sky",
-      slug: "vremennye-koronki-posle-implantacii",
-    },
-    {
-      title: "Подготовка к стоматологической операции: что нужно знать?",
-      excerpt:
-        "Перед хирургическим вмешательством важно пройти обследование и соблюдать рекомендации врача. В статье рассказываем о ключевых этапах подготовки.",
-      category: "Подготовка",
-      readTime: `6 ${t("articles.min_read")}`,
-      color: "bg-zen-sage/20",
-      slug: "podgotovka-k-stomatologicheskoj-operacii",
-    },
-    {
-      title: "Рентген и КЛКТ перед операцией: зачем нужны исследования?",
-      excerpt:
-        "Современная диагностика помогает врачу точно оценить состояние зубов и костной ткани. Узнайте, какие методы применяются и почему они важны.",
-      category: "Диагностика",
-      readTime: `7 ${t("articles.min_read")}`,
-      color: "bg-zen-soft/20",
-      slug: "rentgen-i-kt-pered-operaciej",
-    },
-    {
-      title: "Пластика десны: эстетика и здоровье",
-      excerpt:
-        "Хирургическая пластика десны помогает восстановить естественный контур улыбки и улучшить гигиену полости рта.",
-      category: "Хирургия",
-      readTime: `5 ${t("articles.min_read")}`,
-      color: "bg-zen-sage/20",
-      slug: "plastika-desny-estetika-i-zdorove",
-    },
-    {
-      title: "Рекомендации пациенту перед хирургическим вмешательством",
-      excerpt:
-        "Чтобы операция прошла успешно, важно соблюдать ряд правил: от питания до приема лекарств. В статье — практические советы.",
-      category: "Подготовка",
-      readTime: `5 ${t("articles.min_read")}`,
-      color: "bg-zen-sage/20",
-      slug: "rekomendacii-pacientu-pered-operaciej",
-    },
-    {
-      title: "Удаление зубов мудрости у взрослых: показания и особенности",
-      excerpt:
-        "Зубы мудрости часто становятся источником проблем у взрослых пациентов. Разбираем, когда необходимо хирургическое удаление и как проходит восстановление.",
-      category: "Хирургия",
-      readTime: `6 ${t("articles.min_read")}`,
-      color: "bg-zen-soft/20",
-      slug: "udalenie-zubov-mudrosti-u-vzroslyh",
-    },
-    {
-      title: "Резекция верхушки корня: когда нужна операция?",
-      excerpt:
-        "Если воспаление не удается устранить консервативными методами, резекция верхушки корня становится эффективным хирургическим решением.",
-      category: "Хирургия",
-      readTime: `7 ${t("articles.min_read")}`,
-      color: "bg-zen-sage/20",
-      slug: "rezekciya-verhushki-kornya",
-    },
-    {
-      title: "Послеоперационные рекомендации: что важно знать пациенту",
-      excerpt:
-        "Правильное поведение после операции помогает ускорить восстановление и избежать осложнений. В статье — основные правила ухода.",
-      category: "Реабилитация",
-      readTime: `6 ${t("articles.min_read")}`,
-      color: "bg-zen-sky",
-      slug: "posleoperacionnye-rekomendacii-pacientu",
-    },
-    {
-      title: "Стоматологические операции у беременных: что нужно учитывать?",
-      excerpt:
-        "Беременность накладывает особые требования на проведение стоматологических вмешательств. В статье рассказываем, какие процедуры допустимы, какие стоит отложить и как минимизировать риски для мамы и ребёнка.",
-      category: "Беременные",
-      readTime: `7 ${t("articles.min_read")}`,
-      color: "bg-zen-sage/20",
-      slug: "stomatologicheskie-operacii-u-beremennyh",
-    },
-    {
-      title:
-        "Анестезия в стоматологии: какие варианты подходят взрослым пациентам?",
-      excerpt:
-        "Современная стоматология предлагает разные виды анестезии — от местной до седации. Разбираем, в каких случаях применяются разные методы и как выбрать оптимальный вариант.",
-      category: "Анестезия",
-      readTime: `6 ${t("articles.min_read")}`,
-      color: "bg-zen-soft/20",
-      slug: "anesteziya-v-stomatologii-varianty",
-    },
-  ];
+  const categories = Object.values(Category);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(searchTerm);
+    }, 300);
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchTerm]);
+  const filteredArticles = allArticles.filter((article) => {
+    const matchesCategory =
+      selectedCategory === "" || article.category === selectedCategory;
+    const matchesSearch =
+      debouncedSearch === "" ||
+      article.title.toLowerCase().includes(debouncedSearch.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const handleSelect = (cat: string) => {
+    setSelectedCategory(cat);
+    setIsOpen(false);
+  };
+
+  const clearSearch = () => {
+    setSearchTerm("");
+    setDebouncedSearch("");
+  };
+
+  const resetFilter = (e: SyntheticEvent<SVGSVGElement>) => {
+    e.stopPropagation();
+    setSelectedCategory("");
+  };
 
   return (
     <div className="pt-24 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
@@ -166,23 +68,91 @@ const ArticlesPage = () => {
             {t("articles.descr")}
           </p>
 
-          <div className="max-w-md mx-auto relative">
-            <input
-              type="text"
-              placeholder={t("articles.search")}
-              className="w-full pl-12 pr-4 py-3 rounded-full border border-zen-text/10 dark:border-zen-dark-border bg-white/80 dark:bg-zen-dark-bg focus:outline-none focus:ring-2 focus:ring-zen-soft/50 transition-all text-zen-text dark:text-zen-dark-text"
-            />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zen-text/40 dark:text-zen-dark-text/40" />
+          <div className="max-w-xl mx-auto relative flex items-center gap-3">
+            <div className="relative w-full">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder={t("articles.search")}
+                className="w-full pl-12 pr-4 py-3 rounded-full border border-zen-text/10 dark:border-zen-dark-border bg-white/80 dark:bg-zen-dark-bg focus:outline-none focus:ring-2 focus:ring-zen-soft/50 transition-all text-zen-text dark:text-zen-dark-text"
+              />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zen-text/40 dark:text-zen-dark-text/40" />
+
+              {searchTerm && (
+                <button
+                  onClick={clearSearch}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-zen-text/40 dark:text-zen-dark-text/40 hover:text-zen-text dark:hover:text-zen-dark-text transition"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
+            <div className="relative">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-2 px-4 py-3 rounded-full border border-zen-text/10 dark:border-zen-dark-border bg-white/80 dark:bg-zen-dark-bg text-zen-text dark:text-zen-dark-text focus:outline-none focus:ring-2 focus:ring-zen-soft/50 transition-all cursor-pointer"
+              >
+                <Filter className="w-5 h-5" />
+                {selectedCategory || t("articles.filter")}
+                {selectedCategory && (
+                  <X
+                    onClick={resetFilter}
+                    className="ml-2 w-4 h-4 text-zen-text/40 dark:text-zen-dark-text/40 hover:text-zen-text dark:hover:text-zen-dark-text cursor-pointer"
+                  />
+                )}
+              </button>
+
+              {isOpen && (
+                <div className="absolute mt-2 w-48 bg-white dark:bg-zen-dark-surface shadow-lg rounded-lg overflow-hidden z-10">
+                  <button
+                    className={`block w-full text-left px-4 py-2 transition ${
+                      selectedCategory === ""
+                        ? "bg-zen-soft/30 dark:bg-zen-dark-bg"
+                        : "hover:bg-zen-soft/20 dark:hover:bg-zen-dark-bg"
+                    }`}
+                    onClick={() => handleSelect("")}
+                  >
+                    {t("articles.all")}
+                  </button>
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      className={`block w-full text-left px-4 py-2 transition cursor-pointer ${
+                        selectedCategory === cat
+                          ? "bg-zen-soft/30 dark:bg-zen-dark-bg"
+                          : "hover:bg-zen-soft/20 dark:hover:bg-zen-dark-bg"
+                      }`}
+                      onClick={() => handleSelect(cat)}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {allArticles.map((article, index) => (
-            <ArticleElement key={index} article={article} index={index} />
-          ))}
-        </div>
+        {filteredArticles.length === 0 ? (
+          <div className="flex items-center mx-auto w-full justify-center gap-5 text-center text-zen-text/70 dark:text-zen-dark-text/70 text-xl font-light py-6">
+            <NotFoundSearch />
+            <span>{t("articles.notFound")}</span>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            {filteredArticles.map((article, index) => (
+              <ArticleElement
+                key={article.id}
+                article={article}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

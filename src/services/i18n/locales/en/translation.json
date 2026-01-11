@@ -178,7 +178,11 @@
     "more_read": "Read More Articles",
     "journal": "Journal",
     "min_read": "min read",
-    "read": "Read article"
+    "read": "Read article",
+    "back_to_articles": "Back to Articles",
+    "all": "All categories",
+    "filter": "Filter",
+    "notFound": "Not found"
   },
   "hero": {
     "badge": "Confidence and comfort",
@@ -235,13 +239,7 @@
     "course_hours_3": "80 hours of study",
     "course_hours_4": "80 hours of study"
   },
-
-  "contact": {
-    "title": "Begin Your Journey",
-    "subtitle": "We invite you to experience the difference of mindful dentistry.",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "submit": "Request Appointment"
+  "common": {
+    "back_home": "Home Page"
   }
 }
