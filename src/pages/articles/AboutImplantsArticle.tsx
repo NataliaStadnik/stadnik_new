@@ -1,5 +1,6 @@
 import { implantaciyaZubovOptimalnyjVariant } from "../../constants/allArticles";
 import ArticleLayout from "../../shared/ArticleLayout";
+import SimpleText from "../../shared/SimpleText";
 
 const AboutImplantsArticle = () => {
   const { category, readTime, title, subtitle } =
@@ -13,21 +14,24 @@ const AboutImplantsArticle = () => {
       text={subtitle}
     >
       <div className="prose prose-lg max-w-none">
-        <p className="text-zen-text/80 dark:text-zen-dark-text/80 leading-relaxed mb-6">
-          Современная стоматология предлагает множество решений для
+        <SimpleText
+          classes="mb-6"
+          text="Современная стоматология предлагает множество решений для
           восстановления утраченных зубов, и имплантация занимает особое место.
           Это не просто эстетика — импланты напрямую влияют на качество жизни,
           здоровье десен и даже общее самочувствие. Но как выбрать оптимальный
-          вариант среди множества технологий и материалов?
-        </p>
+          вариант среди множества технологий и материалов?"
+        />
 
         <h2 className="text-2xl font-serif text-zen-text dark:text-zen-dark-text mt-12 mb-6">
           Почему имплантация — лучший выбор
         </h2>
-        <p className="text-zen-text/80 dark:text-zen-dark-text/80 leading-relaxed mb-4">
-          Имплант имитирует корень зуба, обеспечивая прочную основу для коронки
-          или протеза. В отличие от мостов или съемных конструкций, он:
-        </p>
+        <SimpleText
+          classes="mb-4"
+          text=" Имплант имитирует корень зуба, обеспечивая прочную основу для коронки
+          или протеза. В отличие от мостов или съемных конструкций, он:"
+        />
+
         <ul className="space-y-3 mb-6 text-zen-text/80 dark:text-zen-dark-text/80">
           {[
             "предотвращает атрофию костной ткани",
@@ -122,29 +126,31 @@ const AboutImplantsArticle = () => {
           <h2 className="text-2xl font-serif text-zen-text dark:text-zen-dark-text mb-6">
             Пациент как активный участник процесса
           </h2>
-          <p className="text-zen-text/80 dark:text-zen-dark-text/80 leading-relaxed">
-            Имплантация — это совместный путь врача и пациента. Когда человек
+          <SimpleText
+            text="Имплантация — это совместный путь врача и пациента. Когда человек
             понимает, что успех зависит не только от хирургической техники, но и
             от его собственных привычек, он становится активным участником
-            лечения.
-          </p>
+            лечения."
+          />
         </div>
 
         <h2 className="text-2xl font-serif text-zen-text dark:text-zen-dark-text mt-12 mb-6">
           Срок службы дентальных имплантов
         </h2>
-        <p className="text-zen-text/80 dark:text-zen-dark-text/80 leading-relaxed mb-4">
-          Импланты считаются одним из самых долговечных способов восстановления
+        <SimpleText
+          classes="mb-4"
+          text="Импланты считаются одним из самых долговечных способов восстановления
           зубов. При правильной установке и уходе они могут служить 20–25 лет и
-          даже дольше. Однако срок эксплуатации зависит от нескольких факторов.
-        </p>
-        <p className="text-zen-text/80 dark:text-zen-dark-text/80 leading-relaxed mb-6">
-          В первую очередь — от качества самой системы: импланты премиум-класса
+          даже дольше. Однако срок эксплуатации зависит от нескольких факторов."
+        />
+        <SimpleText
+          classes="mb-6"
+          text="В первую очередь — от качества самой системы: импланты премиум-класса
           из титана или циркония демонстрируют высокую надёжность и
           биосовместимость. Не менее важна работа врача: точная диагностика,
           грамотная установка и контроль на всех этапах лечения снижают риск
-          осложнений.
-        </p>
+          осложнений."
+        />
 
         <h2 className="text-2xl font-serif text-zen-text dark:text-zen-dark-text mt-12 mb-6">
           Факторы выбора оптимального варианта
@@ -184,10 +190,12 @@ const AboutImplantsArticle = () => {
         <h2 className="text-2xl font-serif text-zen-text dark:text-zen-dark-text mt-12 mb-6">
           Поддержка здоровья для успешной имплантации
         </h2>
-        <p className="text-zen-text/80 dark:text-zen-dark-text/80 leading-relaxed mb-4">
-          Чтобы имплант прижился и служил долго, важно учитывать не только
-          технику операции, но и образ жизни пациента:
-        </p>
+        <SimpleText
+          classes="mb-4"
+          text=" Чтобы имплант прижился и служил долго, важно учитывать не только
+          технику операции, но и образ жизни пациента:"
+        />
+
         <ul className="space-y-3 mb-6 text-zen-text/80 dark:text-zen-dark-text/80">
           {[
             "отказ от курения и алкоголя;",

@@ -19,12 +19,12 @@ const PhotoMe = () => {
           viewport={{
             once: true,
           }}
-          className="rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
+          className="max-h-[400px] rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
         >
           <img
             src={megaLection}
             alt="Me on lection"
-            className="object-cover h-full"
+            className="object-cover h-full w-full"
           />
         </motion.div>
 
@@ -43,12 +43,12 @@ const PhotoMe = () => {
           transition={{
             delay: 0.1,
           }}
-          className="rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
+          className="max-h-[400px] rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
         >
           <img
             src={meSurgery}
             alt="Me as surgery"
-            className="object-cover h-full"
+            className="object-cover h-full w-full"
           />
         </motion.div>
 
@@ -67,12 +67,12 @@ const PhotoMe = () => {
           transition={{
             delay: 0.2,
           }}
-           className="rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
+           className="max-h-[400px] rounded-2xl flex flex-col items-center justify-center overflow-hidden relative group"
         >
           <img
             src={straumanLecture}
             alt="Me as lecture"
-            className="object-cover h-full"
+            className="object-cover h-full w-full"
           />
         </motion.div>
       </div>
