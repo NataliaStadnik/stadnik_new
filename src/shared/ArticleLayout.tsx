@@ -22,7 +22,7 @@ const ArticleLayout: FC<ArticleLayoutProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="pt-24 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
+    <div className="pt-22 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-6 py-6">
         <Link
           to="/articles"

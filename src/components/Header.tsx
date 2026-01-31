@@ -189,7 +189,7 @@ const Header = () => {
 
             <button
               onClick={toggle}
-              className="p-2 rounded-full hover:bg-zen-sky/50 dark:hover:bg-zen-dark-bg/50 text-zen-text dark:text-zen-dark-text transition-colors"
+              className="p-2 rounded-full hover:bg-zen-sky/50 dark:hover:bg-zen-dark-bg/50 text-zen-text dark:text-zen-dark-text transition-colors cursor-pointer"
               aria-label="Toggle theme"
             >
               {dark ? <Sun size={20}/>  : <Moon size={20} /> }

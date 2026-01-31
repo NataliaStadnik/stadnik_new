@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 
 const ExperiencesPage = () => {
   return (
-    <div className="pt-24 min-h-screen bg-zen-white">
+    <div className="pt-22 min-h-screen bg-zen-white">
       <div className="bg-zen-sky/30 py-20 mb-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1

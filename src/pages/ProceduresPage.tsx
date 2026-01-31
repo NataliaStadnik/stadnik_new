@@ -110,7 +110,7 @@ const ProceduresPage = () => {
     },
   ];
   return (
-    <div className="pt-24 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
+    <div className="pt-22 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
       <div className="bg-zen-sky/30 dark:bg-zen-dark-surface py-20 mb-12 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
@@ -133,109 +133,110 @@ const ProceduresPage = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="space-y-24">
+        <div className="space-y-18">
           {procedures.map((proc, index) => (
-            <motion.div
-              key={proc.id}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            >
-              <div
-                className={`order-2 ${
-                  index % 2 === 0 ? "lg:order-1" : "lg:order-2"
-                }`}
+            <>
+              <motion.div
+                key={proc.id}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 0.6,
+                }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
               >
-                <div className="flex items-center space-x-4 mb-6">
-                  <div
-                    className={`p-4 rounded-2xl ${proc.color} text-zen-text dark:text-zen-dark-text`}
-                  >
-                    <proc.icon size={32} strokeWidth={1.5} />
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-serif text-zen-text dark:text-zen-dark-text">
-                    {proc.title}
-                  </h2>
-                </div>
-
-                <p className="text-lg text-zen-text/80 dark:text-zen-dark-text/80 mb-8 leading-relaxed">
-                  {proc.overview}
-                </p>
-
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-zen-sage mb-4">
-                      {t("procedures.steps")}
-                    </h3>
-                    <ul className="space-y-3">
-                      {proc.process.map((step, i) => (
-                        <li
-                          key={i}
-                          className="flex items-center text-zen-text/70 dark:text-zen-dark-text/70"
-                        >
-                          <span className="w-6 h-6 rounded-full bg-zen-sky dark:bg-zen-dark-surface flex items-center justify-center text-xs font-bold mr-3 text-zen-text dark:text-zen-dark-text">
-                            {i + 1}
-                          </span>
-                          {step}
-                        </li>
-                      ))}
-                    </ul>
+                <div
+                  className={`order-2 ${
+                    index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div
+                      className={`p-4 rounded-2xl ${proc.color} text-zen-text dark:text-zen-dark-text`}
+                    >
+                      <proc.icon size={32} strokeWidth={1.5} />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-serif text-zen-text dark:text-zen-dark-text">
+                      {proc.title}
+                    </h2>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-zen-sky/20 dark:bg-zen-dark-surface p-6 rounded-xl">
-                      <h3 className="text-sm font-bold uppercase tracking-widest text-zen-sage mb-3">
-                        {t("procedures.benefits")}
+                  <p className="text-lg text-zen-text/80 dark:text-zen-dark-text/80 mb-8 leading-relaxed">
+                    {proc.overview}
+                  </p>
+
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-sm font-bold uppercase tracking-widest text-zen-sage mb-4">
+                        {t("procedures.steps")}
                       </h3>
-                      <ul className="space-y-2">
-                        {proc.benefits.map((benefit, i) => (
+                      <ul className="space-y-3">
+                        {proc.process.map((step, i) => (
                           <li
                             key={i}
-                            className="text-sm text-zen-text/70 dark:text-zen-dark-text/70 flex items-start"
+                            className="flex items-center text-zen-text/70 dark:text-zen-dark-text/70"
                           >
-                            <span className="mr-2">•</span> {benefit}
+                            <span className="w-6 h-6 shrink-0 rounded-full bg-zen-sky dark:bg-zen-dark-surface flex items-center justify-center text-xs font-bold mr-3 text-zen-text dark:text-zen-dark-text">
+                              {i + 1}
+                            </span>
+                            {step}
                           </li>
                         ))}
                       </ul>
                     </div>
-
-                    <div className="bg-zen-soft/10 dark:bg-zen-dark-surface p-6 rounded-xl border border-zen-soft/20 dark:border-zen-dark-border">
-                      <h3 className="text-sm font-bold uppercase tracking-widest text-zen-sage mb-3">
-                        {t("procedures.recovery")}
-                      </h3>
-                      <p className="text-zen-text/70 dark:text-zen-dark-text/70 text-sm">
-                        {proc.recovery}
-                      </p>
-                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div
-                className={`order-1 ${
-                  index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-                }`}
-              >
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-zen-sky/10 dark:bg-zen-dark-surface border border-zen-sky dark:border-zen-dark-border">
-                  <img
-                    src={proc.img}
-                    alt={`Image ${proc.title}`}
-                    className="h-full object-cover"
-                  />
+                <div
+                  className={`order-1 ${
+                    index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-zen-sky dark:border-zen-dark-border">
+                    <img
+                      src={proc.img}
+                      alt={`Image ${proc.title}`}
+                      className="h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-zen-soft/10 dark:bg-zen-dark-surface p-6 rounded-xl border border-zen-soft/20">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-zen-sage mb-3">
+                    {t("procedures.benefits")}
+                  </h3>
+                  <ul className="space-y-2">
+                    {proc.benefits.map((benefit, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-zen-text/70 dark:text-zen-dark-text/70 flex items-start"
+                      >
+                        <span className="mr-2">•</span> {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-zen-soft/10 dark:bg-zen-dark-surface p-6 rounded-xl border border-zen-soft/20 dark:border-zen-dark-border">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-zen-sage mb-3">
+                    {t("procedures.recovery")}
+                  </h3>
+                  <p className="text-zen-text/70 dark:text-zen-dark-text/70 text-sm">
+                    {proc.recovery}
+                  </p>
                 </div>
               </div>
-            </motion.div>
+            </>
           ))}
         </div>
       </div>

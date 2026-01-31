@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FC } from "react";
 import { motion } from "framer-motion";
 import {
   Quote,
@@ -10,7 +10,11 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-const Feedback = () => {
+interface FeedbackProps {
+  isTitle?: boolean;
+}
+
+const Feedback: FC<FeedbackProps> = ({ isTitle = true }) => {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextSlide = () => {
@@ -115,43 +119,45 @@ const Feedback = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/30 dark:border-zen-dark-border/30 rounded-full opacity-50" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            className="text-4xl md:text-5xl font-serif text-zen-text dark:text-zen-dark-text mb-4"
-          >
-            {t("feedback.title")}
-          </motion.h2>
-          <motion.p
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: 0.2,
-            }}
-            className="text-zen-text/70 dark:text-zen-dark-text/70 max-w-2xl mx-auto"
-          >
-            {t("feedback.subtitle")}
-          </motion.p>
-        </div>
+        {isTitle && (
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              className="text-4xl md:text-5xl font-serif text-zen-text dark:text-zen-dark-text mb-4"
+            >
+              {t("feedback.title")}
+            </motion.h2>
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: 0.2,
+              }}
+              className="text-zen-text/70 dark:text-zen-dark-text/70 max-w-2xl mx-auto"
+            >
+              {t("feedback.subtitle")}
+            </motion.p>
+          </div>
+        )}
 
         <div className="relative max-w-4xl mx-auto">
           <div className="overflow-hidden px-4 py-8">
@@ -210,13 +216,13 @@ const Feedback = () => {
 
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20 cursor-pointer"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20 cursor-pointer"
           >
             <ChevronRight size={24} />
           </button>

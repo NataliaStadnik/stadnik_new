@@ -97,7 +97,7 @@ const ReviewForm = () => {
                   name: e.target.value,
                 })
               }
-              className="w-full px-4 py-3 rounded-xl bg-zen-sky/20 dark:bg-zen-dark-bg border border-transparent focus:border-zen-sage focus:ring-0 text-zen-text dark:text-zen-dark-text transition-all outline-none"
+              className="w-full px-4 py-3 rounded-xl bg-zen-sky/20 dark:bg-zen-dark-bg border border-zen-soft/20 dark:border-zen-dark-border focus:border-zen-sage focus:ring-0 text-zen-text dark:text-zen-dark-text transition-all outline-none"
             />
           </div>
           <div className="space-y-2">
@@ -114,7 +114,7 @@ const ReviewForm = () => {
                   email: e.target.value,
                 })
               }
-              className="w-full px-4 py-3 rounded-xl bg-zen-sky/20 dark:bg-zen-dark-bg border border-transparent focus:border-zen-sage focus:ring-0 text-zen-text dark:text-zen-dark-text transition-all outline-none"
+              className="w-full px-4 py-3 rounded-xl bg-zen-sky/20 dark:bg-zen-dark-bg border border-zen-soft/20 dark:border-zen-dark-border focus:border-zen-sage focus:ring-0 text-zen-text dark:text-zen-dark-text transition-all outline-none"
             />
           </div>
         </div>
@@ -133,14 +133,14 @@ const ReviewForm = () => {
                 review: e.target.value,
               })
             }
-            className="w-full px-4 py-3 rounded-xl bg-zen-sky/20 dark:bg-zen-dark-bg border border-transparent focus:border-zen-sage focus:ring-0 text-zen-text dark:text-zen-dark-text transition-all outline-none resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-zen-sky/20 dark:bg-zen-dark-bg border border-zen-soft/20 dark:border-zen-dark-border focus:border-zen-sage focus:ring-0 text-zen-text dark:text-zen-dark-text transition-all outline-none resize-none"
           />
         </div>
 
         <div className="pt-4 text-center">
           <button
             type="submit"
-            className="px-10 py-4 bg-zen-text dark:bg-zen-dark-text text-zen-white dark:text-zen-dark-bg rounded-full font-medium tracking-wide shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center mx-auto"
+            className="px-10 py-4 bg-zen-text dark:bg-zen-dark-text text-zen-white dark:text-zen-dark-bg rounded-full font-medium tracking-wide shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center mx-auto cursor-pointer"
           >
             {t("feedback.submit")} <Send size={18} className="ml-2" />
           </button>

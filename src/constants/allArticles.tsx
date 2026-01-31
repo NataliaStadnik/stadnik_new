@@ -1,5 +1,16 @@
 import { articleSlugs } from "../services/routes/path";
 import type { Article } from "./types";
+import artic_kost_plast from "../assets/images/articles/artic_kost_plast.jpg";
+import artic_plastic_desny from "../assets/images/articles/artic_plastic_desny.jpg";
+import artic_wisdow_extract from "../assets/images/articles/artic_wisdow_extract.jpg";
+import artic_klkt from "../assets/images/articles/artic_klkt.jpg";
+import artic_sinus from "../assets/images/articles/artic_sinus.jpg";
+import artic_crown from "../assets/images/articles/artic_crown.jpg";
+import artic_before_operation from "../assets/images/articles/artic_before_operation.png";
+import artic_recomend_before from "../assets/images/articles/artic_recomend_before.png";
+import artic_periimplantit from "../assets/images/articles/artic_periimplantit.png";
+import artic_uhod_tooth from "../assets/images/articles/artic_uhod_tooth.png";
+import artic_implant from "../assets/images/implant-placement.png";
 
 export enum Category {
   Implantologiya = "Имплантология",
@@ -23,6 +34,7 @@ export const implantaciyaZubovOptimalnyjVariant: Article = {
   readTime: `5`,
   color: "bg-zen-sage/20",
   slug: articleSlugs.implantaciyaZubovOptimalnyjVariant,
+  img: artic_implant,
 };
 
 export const kostnayaPlastikaPeredImplantaciej: Article = {
@@ -35,6 +47,7 @@ export const kostnayaPlastikaPeredImplantaciej: Article = {
   readTime: `7`,
   color: "bg-zen-soft/20",
   slug: articleSlugs.kostnayaPlastikaPeredImplantaciej,
+  img: artic_kost_plast,
 };
 
 export const uhodZaZubamiPosleOperacii: Article = {
@@ -47,6 +60,7 @@ export const uhodZaZubamiPosleOperacii: Article = {
   readTime: `5`,
   color: "bg-zen-sky",
   slug: articleSlugs.uhodZaZubamiPosleOperacii,
+  img: artic_uhod_tooth,
 };
 
 export const periimplantitKakIzbezhatVospaleniya: Article = {
@@ -59,6 +73,7 @@ export const periimplantitKakIzbezhatVospaleniya: Article = {
   readTime: `6`,
   color: "bg-zen-sky",
   slug: articleSlugs.periimplantitKakIzbezhatVospaleniya,
+  img: artic_periimplantit,
 };
 
 export const sinusLiftingPeredImplantaciej: Article = {
@@ -71,6 +86,7 @@ export const sinusLiftingPeredImplantaciej: Article = {
   readTime: `5`,
   color: "bg-zen-sky",
   slug: articleSlugs.sinusLiftingPeredImplantaciej,
+  img: artic_sinus,
 };
 
 export const vremennyeKoronkiPosleImplantacii: Article = {
@@ -83,6 +99,7 @@ export const vremennyeKoronkiPosleImplantacii: Article = {
   readTime: `5`,
   color: "bg-zen-sky",
   slug: articleSlugs.vremennyeKoronkiPosleImplantacii,
+  img: artic_crown,
 };
 
 export const podgotovkaKStomatologicheskojOperacii: Article = {
@@ -95,6 +112,7 @@ export const podgotovkaKStomatologicheskojOperacii: Article = {
   readTime: `6`,
   color: "bg-zen-sage/20",
   slug: articleSlugs.podgotovkaKStomatologicheskojOperacii,
+  img: artic_before_operation,
 };
 
 export const rentgenIKtPeredOperaciej: Article = {
@@ -107,6 +125,7 @@ export const rentgenIKtPeredOperaciej: Article = {
   readTime: `7`,
   color: "bg-zen-soft/20",
   slug: articleSlugs.rentgenIKtPeredOperaciej,
+  img: artic_klkt,
 };
 
 export const plastikaDesnyEstetikaIZdorove: Article = {
@@ -119,6 +138,7 @@ export const plastikaDesnyEstetikaIZdorove: Article = {
   readTime: `5`,
   color: "bg-zen-sage/20",
   slug: articleSlugs.plastikaDesnyEstetikaIZdorove,
+  img: artic_plastic_desny,
 };
 
 export const rekomendaciiPacientuPeredOperaciej: Article = {
@@ -143,6 +163,7 @@ export const udalenieZubovMudrostiUVzroslyh: Article = {
   readTime: `6`,
   color: "bg-zen-soft/20",
   slug: articleSlugs.udalenieZubovMudrostiUVzroslyh,
+  img: artic_wisdow_extract,
 };
 
 export const rezekciyaVerhushkiKornya: Article = {
@@ -167,6 +188,7 @@ export const posleoperacionnyeRekomendaciiPacientu: Article = {
   readTime: `6`,
   color: "bg-zen-sky",
   slug: articleSlugs.posleoperacionnyeRekomendaciiPacientu,
+  img: artic_recomend_before,
 };
 
 export const stomatologicheskieOperaciiUBeremennyh: Article = {
@@ -204,9 +226,9 @@ export const allArticles: Article[] = [
   podgotovkaKStomatologicheskojOperacii,
   rentgenIKtPeredOperaciej,
   plastikaDesnyEstetikaIZdorove,
-  rekomendaciiPacientuPeredOperaciej,
+  // rekomendaciiPacientuPeredOperaciej,
   udalenieZubovMudrostiUVzroslyh,
-  rezekciyaVerhushkiKornya,
+  // rezekciyaVerhushkiKornya,
   posleoperacionnyeRekomendaciiPacientu,
   stomatologicheskieOperaciiUBeremennyh,
   anesteziyaVStomatologiiVarianty,

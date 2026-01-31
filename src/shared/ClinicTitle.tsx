@@ -5,7 +5,7 @@ const ClinicTitle = () => {
   const { t } = useTranslation();
 
   return (
-    <h2 className="text-2xl md:text-4xl font-serif text-zen-text mb-8">
+    <h2 className="text-2xl md:text-4xl font-serif text-zen-text dark:text-zen-dark-text mb-8">
       <span>{t("contacts.title")}</span>
       <Link
         className="pl-2 hover:text-[#63aac1] transition-colors"

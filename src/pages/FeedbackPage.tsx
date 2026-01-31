@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 const FeedbackPage = () => {
   const { t } = useTranslation();
   return (
-    <div className="pt-24 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
-      <div className="bg-zen-sky/30 dark:bg-zen-dark-surface py-20 mb-12 transition-colors duration-300">
+    <div className="pt-22 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
+      <div className="bg-zen-sky/30 dark:bg-zen-dark-surface py-20 mb-18 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
             initial={{
@@ -29,8 +29,8 @@ const FeedbackPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mb-24">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 bg-zen-text dark:bg-zen-dark-surface text-zen-white dark:text-zen-dark-text p-12 rounded-3xl mb-16 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 mb-18">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 bg-zen-text dark:bg-zen-dark-surface text-zen-white dark:text-zen-dark-text p-12 rounded-3xl shadow-lg">
           <div className="text-center">
             <div className="text-5xl font-serif mb-2">4.9/5</div>
             <div className="flex text-zen-sage justify-center mb-2">
@@ -59,7 +59,7 @@ const FeedbackPage = () => {
         </div>
       </div>
 
-      <Feedback />
+      <Feedback isTitle={false} />
 
       <div className="max-w-4xl mx-auto px-6 py-24">
         <ReviewForm />

@@ -13,7 +13,7 @@ const ClinicInfo: FC<ContactPageProps> = ({ children }) => {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   return (
-    <section className="py-20 bg-zen-sky/30">
+    <section className="py-20 bg-zen-sky/30 dark:bg-zen-dark-bg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div
@@ -32,14 +32,14 @@ const ClinicInfo: FC<ContactPageProps> = ({ children }) => {
             {children}
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-zen-white flex items-center justify-center text-zen-sage shrink-0">
+                <div className="w-10 h-10 rounded-full bg-zen-white dark:bg-zen-dark-surface flex items-center justify-center text-zen-sage shrink-0 border border-zen-sage/60 dark:border-zen-dark-border">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-zen-text mb-1">
+                  <h3 className="font-medium text-zen-text dark:text-zen-sage mb-1">
                     {t("contacts.location")}
                   </h3>
-                  <p className="flex flex-col text-zen-text/70">
+                  <p className="flex flex-col text-zen-text/70 dark:text-zen-dark-text/80">
                     <span>{t("contacts.address")}</span>
                     <span>{t("contacts.city")}</span>
                   </p>
@@ -47,14 +47,14 @@ const ClinicInfo: FC<ContactPageProps> = ({ children }) => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-zen-white flex items-center justify-center text-zen-sage shrink-0">
+                <div className="w-10 h-10 rounded-full bg-zen-white dark:bg-zen-dark-surface flex items-center justify-center text-zen-sage dark:text-zen-dark-text/80 shrink-0 border border-zen-sage/60 dark:border-zen-dark-border">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-zen-text mb-1">
+                  <h3 className="font-medium text-zen-text dark:text-zen-sage mb-1">
                     {t("contacts.time")}
                   </h3>
-                  <p className="flex flex-col text-zen-text/70">
+                  <p className="flex flex-col text-zen-text/70 dark:text-zen-dark-text/80">
                     <span>{t("contacts.days")}</span>
                     <span>{t("contacts.weekend")}</span>
                   </p>
@@ -62,14 +62,14 @@ const ClinicInfo: FC<ContactPageProps> = ({ children }) => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-zen-white flex items-center justify-center text-zen-sage shrink-0">
+                <div className="w-10 h-10 rounded-full bg-zen-white dark:bg-zen-dark-surface flex items-center justify-center text-zen-sage dark:text-zen-dark-text/80 shrink-0 border border-zen-sage/60 dark:border-zen-dark-border">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-zen-text mb-1">
+                  <h3 className="font-medium text-zen-text dark:text-zen-sage mb-1">
                     {t("contacts.contacts")}
                   </h3>
-                  <div className="flex flex-col text-zen-text/70">
+                  <div className="flex flex-col text-zen-text/70 dark:text-zen-dark-text/80">
                     <a href="tel:+375173886011">+375 (17) 388-60-11</a>
                     <a href="tel:+375296230011">+375 (29) 623-00-11</a>
 

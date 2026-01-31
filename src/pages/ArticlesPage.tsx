@@ -48,7 +48,7 @@ const ArticlesPage = () => {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
+    <div className="pt-22 min-h-screen bg-zen-white dark:bg-zen-dark-bg transition-colors duration-300">
       <div className="bg-zen-sky/30 dark:bg-zen-dark-surface py-20 mb-12 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
@@ -105,7 +105,7 @@ const ArticlesPage = () => {
               </button>
 
               {isOpen && (
-                <div className="absolute mt-2 w-48 bg-white dark:bg-zen-dark-surface shadow-lg rounded-lg overflow-hidden z-10">
+                <div className="absolute mt-2 -left-[70px] md:left-0 w-48 bg-white dark:bg-zen-dark-surface shadow-lg rounded-lg overflow-hidden z-10">
                   <button
                     className={`block w-full text-left px-4 py-2 transition ${
                       selectedCategory === ""
@@ -143,7 +143,7 @@ const ArticlesPage = () => {
             <span>{t("articles.notFound")}</span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {filteredArticles.map((article, index) => (
               <ArticleElement
                 key={article.id}

@@ -7,4 +7,5 @@ export interface Article {
   readTime: string;
   color: string;
   slug: string;
+  img?: string;
 }

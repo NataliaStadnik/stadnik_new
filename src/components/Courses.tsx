@@ -48,10 +48,10 @@ const Courses = () => {
             </div>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 md:gap-12 w-full">
               <div>
-                <p className="font-serif font-semibold leading-relaxed text-xl text-zen-text">
+                <p className="font-serif font-semibold leading-relaxed text-xl text-zen-text dark:text-zen-white/70">
                   {title}
                 </p>
-                <p className="text-zen-text/70 dark:text-zen-dark-text/70 text-sm leading-relaxed">
+                <p className="text-zen-text/70 dark:text-zen-dark-text/60 text-sm leading-relaxed">
                   {place}, {hours}
                 </p>
               </div>

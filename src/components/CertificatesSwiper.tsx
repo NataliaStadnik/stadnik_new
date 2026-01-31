@@ -103,7 +103,7 @@ const CertificatesSwiper = () => {
         </motion.h2>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden relative h-[480px]">
+          <div className="overflow-hidden relative h-[325px] md:h-[480px]">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -119,11 +119,11 @@ const CertificatesSwiper = () => {
                 }}
                 className="p-6 md:p-10 flex flex-col items-center"
               >
-                <div className="w-full h-[410px] flex items-center justify-center">
+                <div className="w-full h-[274px] md:h-[410px] flex items-center justify-center">
                   <img
                     src={CERTIFICATES[currentIndex]}
                     alt="Photo of certificate"
-                    className="max-w-[600px] w-full h-full object-contain rounded-lg"
+                    className="max-w-[600px] w-full h-full object-contain rounded-lg bg-white"
                     style={{ boxShadow: "0 8px 20px rgba(0,0,0,0.25)" }}
                   />
                 </div>
@@ -133,13 +133,13 @@ const CertificatesSwiper = () => {
 
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-9 md:-translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20 cursor-pointer"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-9 md:translate-x-12 p-3 rounded-full bg-white dark:bg-zen-dark-surface shadow-md text-zen-text dark:text-zen-dark-text hover:bg-zen-sky dark:hover:bg-zen-dark-border transition-colors z-20 cursor-pointer"
           >
             <ChevronRight size={24} />
           </button>
